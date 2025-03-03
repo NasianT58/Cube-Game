@@ -17,11 +17,11 @@ public class PlayerMovement : MonoBehaviour
         // Add a forward force
         rb.AddForce(0, 0, forwardForce * Time.deltaTime);
 
-        if (Input.GetKey("d")) {
-            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0);
+        if (Input.GetKey("d")) { //force on the x, y, z, and ForceMode to build up momentum/force
+            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
         if (Input.GetKey("a")) {
-            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0);
+            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
     }
 }
